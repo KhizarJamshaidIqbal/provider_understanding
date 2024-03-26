@@ -27,7 +27,10 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           title: const Text('Favorite App'),
           actions: [
             IconButton(
-              icon: const Icon(Icons.favorite),
+              icon: const Icon(
+                Icons.favorite,
+                color: Colors.red,
+              ),
               onPressed: () {
                 Navigator.push(
                     context,

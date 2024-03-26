@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_understanding/controller/counterprovidercontroller.dart';
 import 'package:provider_understanding/controller/favoritcontroller.dart';
+import 'screens/homescreen/home_screen.dart';
 
-import 'screens/FavoriteScreen/FavoriteScreen.dart';
-
-void main() {
+void main() async {
+   WidgetsFlutterBinding.ensureInitialized();
+  await getApplicationSupportDirectory();// Initialize path_provider
   runApp(const MyApp());
 }
 
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const FavoriteScreen(),
+        home: const HomeScreen(),
       ),
     );
   }

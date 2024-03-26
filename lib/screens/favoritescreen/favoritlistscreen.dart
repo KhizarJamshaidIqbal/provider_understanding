@@ -22,9 +22,13 @@ class _FavoritListScreenState extends State<FavoritListScreen> {
           return ListTile(
             title: Text('favorite ${widget.selectedfavoritlist[index]}'),
             trailing: IconButton(
-              icon: const Icon(Icons.favorite),
+              icon: const Icon(
+                Icons.favorite,
+                color: Colors.red,
+              ),
               onPressed: () {
-                widget.selectedfavoritlist.remove(widget.selectedfavoritlist[index]);
+                widget.selectedfavoritlist
+                    .remove(widget.selectedfavoritlist[index]);
                 setState(() {});
               },
             ),
